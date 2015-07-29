@@ -78,7 +78,7 @@ This endpoint retrieves all companies paginated.
 Parameter | Default | Description
 --------- | ------- | -----------
 sort | id | Specify the sorting. Can list one or more fields (comma separated). Each field can be prefixed with a minus "-" sign to indicate reverse order. So `sort=state,-id` would order companies by state, newest first.
-quickSearch |  | Perform a quick search on company name, address_1, city, state, or phone. The search is case insensitive and will return companies where these fields *contain* the value specified.
+quickSearch |  | Perform a quick search on company name, address_1, city, state, or phone. The search is case insensitive and will return companies where any of these fields *contain* the value specified.
 page | 1 | Paginates results.
 
 ## Get a Specific Company
