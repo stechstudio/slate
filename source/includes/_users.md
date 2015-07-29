@@ -175,7 +175,7 @@ Parameter | Required | Comments
 first_name | **Yes**
 last_name | **Yes**
 username | No | If not specified, the email address will be used as the username
-password | No | If not specified, a random password will be generated
+password | No | Requires minimum 8 characters, uppercase and lowercase letters, and at least one number. If not specified, a random password will be generated.
 email | **Yes**
 phone | No
 title | No
@@ -205,7 +205,7 @@ $response = $client->patch("/users/1", [
 > The above command returns the updated user JSON structure. See above under "Get a Specific User" for an example.
 
 
-This endpoint updated a specific user.
+This endpoint updates a specific user.
 
 The body of the request must include a properly formatted JSON document.
 

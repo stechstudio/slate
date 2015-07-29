@@ -81,6 +81,87 @@ sort | id | Specify the sorting. Can list one or more fields (comma separated). 
 quickSearch |  | Perform a quick search on company name, address_1, city, state, or phone. The search is case insensitive and will return companies where any of these fields *contain* the value specified.
 page | 1 | Specify the page of results to fetch.
 
+## Advanced Company Search
+
+```shell
+curl "https://api.qiplans.com/v1/companies/searches" \
+  -X POST \
+  -d '[ ["name","like","ABC%"], ["created",">","2015-01-01"] ]' \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YourAPIKey"
+```
+
+```php
+<?php
+$response = $client->post("/companies/searches", [
+  'json' => [
+    ["name","like","ABC%"],
+    ["created",">","2015-01-01"]
+  ]
+]);
+```
+
+> This will return a list of companies that match the criteria. The structure will be exactly the same as what you would get from 'Get All Companies' above.
+
+This endpoints provides powerful, precise searching of companies.
+
+### HTTP Request
+
+`POST /companies/searches`
+
+### JSON Body
+
+The request body must be a JSON array, with each search criterion specified as a sub-array with exactly three elements. The first element is the field name, the second is the comparison operator, and the third is the value.
+
+For example, to find companies that are in the state of NC, you submit this request:
+
+`[ ["state","=","NC"] ]`
+
+To specify multiple filters, simply create multiple sub-arrays:
+
+`[ ["state","=","NC"], ["name","like","%ABC%"] ]`
+
+Note the percent symbols around 'ABC' above. This will find companies where the company name *contains* 'ABC' anywhere. If you wanted instead to find companies that *start* with 'ABC' simply omit the first percent symbol:
+
+`[ ["state","=","NC"], ["name","like","ABC%"] ]`
+
+Furthermore we could request companies that were created within a certain date range. You could use the `>` or `<` operators here:
+
+`[ ["state","=","NC"], ["name","like","ABC%"], ["created",">","2015-01-01"], ["created","<","2015-01-71"] ]`
+
+### Searchable Fields
+
+These are the fields where searching is permitted. Note the field type, make sure to only use comparison operators that support the field type.
+
+Field | Type | Details
+--------- | ----------- | -----------
+id | number
+name | string
+address_1 | string
+address_2 | string
+city | string
+state | string | Will be compared against the uppercase, two-letter abbreviation
+zip | string
+phone | string
+fax | string
+tax_exempt | boolean
+blasts_access | boolean
+created | date
+
+### Comparison Operators
+
+Operator | Types | Details
+--------- | ----------- | -----------
+= | all | Requires a complete, case sensitive match
+< | numbers, dates | Less than
+\> | numbers, dates | Greater than
+<= | numbers, dates | Less than or equal to
+\>= | numbers, dates | Greater than or equal to
+!= | all | Not equal to
+like | strings | Partial match, use in conjunction with the percent symbol
+not like | strings | Partial match, use in conjunction with the percent symbol
+ilike | strings | Partial match, case insensitive. Use in conjunction with the percent symbol
+
 ## Get a Specific Company
 
 ```shell
