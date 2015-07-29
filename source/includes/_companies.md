@@ -134,7 +134,8 @@ include | Set to `users` to fetch all the users for this company as well
 curl "https://api.qiplans.com/companies" \
   -X POST \
   -d '{ "name" : "Company Name", "phone" : "111-222-3333" }' \
-  -H "x-api-key: YourAPIKey"
+  -H "x-api-key: YourAPIKey" \
+  -H "Content-Type: application/json"
 ```
 
 ```php
@@ -178,7 +179,8 @@ tax_exempt | No
 curl "https://api.qiplans.com/companies/1" \
   -X PATCH \
   -d '{ "name" : "New Company Name" }' \
-  -H "x-api-key: YourAPIKey"
+  -H "x-api-key: YourAPIKey" \
+  -H "Content-Type: application/json"
 ```
 
 ```php

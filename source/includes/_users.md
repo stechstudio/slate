@@ -135,7 +135,8 @@ include | Set to `company` to fetch the related company as well
 curl "https://api.qiplans.com/users" \
   -X POST \
   -d '{ "first_name" : "Gerald", "last_name" : "Gustaf", "email" : "gg@example.com", "phone" : "111-222-3333", "company_id" : 1 }' \
-  -H "x-api-key: YourAPIKey"
+  -H "x-api-key: YourAPIKey" \
+  -H "Content-Type: application/json"
 ```
 
 ```php
@@ -185,7 +186,8 @@ company_id | **Yes** | Must reference an existing company
 curl "//api.qiplans.com/users/1" \
   -X PATCH \
   -d '{ "first_name" : "Jerry" }' \
-  -H "x-api-key: YourAPIKey"
+  -H "x-api-key: YourAPIKey" \
+  -H "Content-Type: application/json"
 ```
 
 ```php
