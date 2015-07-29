@@ -206,7 +206,9 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <p>This will return a list of companies that match the criteria. The structure will be exactly the same as what you would get from &lsquo;Get All Companies&rsquo; above.</p>
 </blockquote>
 
-<p>This endpoints provides powerful, precise searching of companies.</p>
+<p>This endpoint provides powerful, precise searching of companies.</p>
+
+<p>When you submit a search request, you will be redirected to the search result. Make sure your HTTP client follows redirects. The search results will be coming from the &#39;Get All Companies&rsquo; endpoint, with a <code class="prettyprint">search</code> query param added. You will then be able to paginate through your search results just like you would for a normal call to &#39;Get All Companies&rsquo; above.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -228,7 +230,7 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 
 <p><code class="prettyprint">[ [&quot;state&quot;,&quot;=&quot;,&quot;NC&quot;], [&quot;name&quot;,&quot;like&quot;,&quot;ABC%&quot;] ]</code></p>
 
-<p>Furthermore we could request companies that were created within a certain date range. You could use the <code class="prettyprint">&gt;</code> or <code class="prettyprint">&lt;</code> operators here:</p>
+<p>Furthermore you could request companies that were created within a certain date range. You could use the <code class="prettyprint">&gt;</code> or <code class="prettyprint">&lt;</code> operators here:</p>
 
 <p><code class="prettyprint">[ [&quot;state&quot;,&quot;=&quot;,&quot;NC&quot;], [&quot;name&quot;,&quot;like&quot;,&quot;ABC%&quot;], [&quot;created&quot;,&quot;&gt;&quot;,&quot;2015-01-01&quot;], [&quot;created&quot;,&quot;&lt;&quot;,&quot;2015-01-71&quot;] ]</code></p>
 
