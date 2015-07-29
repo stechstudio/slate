@@ -987,7 +987,7 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>Number</td>
+<td>number</td>
 <td>The ID of the user to retrieve</td>
 </tr>
 </tbody></table>
@@ -997,11 +997,13 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Description</th>
+<th>Type</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>include</td>
+<td>string</td>
 <td>Set to <code class="prettyprint">company</code> to fetch the related company as well</td>
 </tr>
 </tbody></table>
@@ -1042,67 +1044,80 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Type</th>
 <th>Required</th>
-<th>Comments</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>first_name</td>
+<td>string</td>
 <td><strong>Yes</strong></td>
 <td></td>
 </tr>
 <tr>
 <td>last_name</td>
+<td>string</td>
 <td><strong>Yes</strong></td>
 <td></td>
 </tr>
 <tr>
 <td>username</td>
+<td>string</td>
 <td>No</td>
 <td>If not specified, the email address will be used as the username</td>
 </tr>
 <tr>
 <td>password</td>
+<td>string</td>
 <td>No</td>
 <td>Requires minimum 8 characters, uppercase and lowercase letters, and at least one number. If not specified, a random password will be generated.</td>
 </tr>
 <tr>
 <td>email</td>
+<td>string</td>
 <td><strong>Yes</strong></td>
 <td></td>
 </tr>
 <tr>
 <td>phone</td>
+<td>string</td>
 <td>No</td>
 <td></td>
 </tr>
 <tr>
 <td>title</td>
+<td>string</td>
 <td>No</td>
 <td></td>
 </tr>
 <tr>
 <td>member</td>
+<td>boolean</td>
 <td>No</td>
 <td>Only applicable if your planroom is setup as a membership planroom</td>
 </tr>
 <tr>
 <td>verified</td>
+<td>boolean</td>
 <td>No</td>
 <td></td>
 </tr>
 <tr>
 <td>confirmed</td>
+<td>boolean</td>
 <td>No</td>
 <td>Will be set to <code class="prettyprint">true</code> by default. If <code class="prettyprint">false</code> the user will have to confirm their email address before logging in.</td>
 </tr>
 <tr>
 <td>notes</td>
+<td>string</td>
 <td>No</td>
 <td></td>
 </tr>
 <tr>
 <td>company_id</td>
+<td>number</td>
 <td><strong>Yes</strong></td>
 <td>Must reference an existing company</td>
 </tr>
@@ -1138,11 +1153,13 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Description</th>
+<th>Type</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
+<td>number</td>
 <td>The ID of the user to update</td>
 </tr>
 </tbody></table>
@@ -1175,11 +1192,13 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Description</th>
+<th>Type</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
+<td>number</td>
 <td>The ID of the user to delete</td>
 </tr>
 </tbody></table>
