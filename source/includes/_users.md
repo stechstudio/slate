@@ -28,7 +28,18 @@ $response = $client->get("/users");
         "email": "edcarter@example.com",
         "title": "",
         "phone": "",
-        "company_id": 1
+        "mobile": "",
+        "fax": "",
+        "confirmed": true,
+        "verified": true,
+        "member": false,
+        "credit_balance": 0,
+        "company_id": 1,
+        "last_login": "Mon, 01 Feb 15 16:01:29 +0000",
+        "last_login_approx": "5 months ago"
+      },
+      "links": {
+        "self": "https://api.qiplans.com/v1/users/1"
       }
     },
     {
@@ -42,11 +53,25 @@ $response = $client->get("/users");
         "email": "jdoe@example.com",
         "title": "Estimator",
         "phone": "",
-        "company_id": 2
+        "mobile": "",
+        "fax": "",
+        "confirmed": true,
+        "verified": true,
+        "member": false,
+        "credit_balance": 0,
+        "company_id": 2,
+        "last_login": "Mon, 06 Apr 15 20:22:03 +0000",
+        "last_login_approx": "3 months ago"
+      },
+      "links": {
+        "self": "https://api.qiplans.com/v1/users/2"
       }
     }
     <snip>
   ],
+  "links": {
+    "self": "https://api.qiplans.com/v1/users"
+  },
   "meta": {
     "pagination": {
       "total": 150,
@@ -191,14 +216,42 @@ $response = $client->get("/users/1");
       "fax": "",
       "confirmed": true,
       "verified": true,
-      "last_login": "Mon, 06 Apr 15 20:22:03 +0000",
-      "last_login_approx": "3 months ago",
-      "notes": ""
+      "member": false,
+      "credit_balance": 0,
+      "company_id": 1,
+      "last_login": "Mon, 01 Feb 15 16:01:29 +0000",
+      "last_login_approx": "5 months ago",
+      "notes": "Notes about this user"
+    },
+    "company": {
+      "data": {
+        "type": "companies",
+        "id": 1,
+        "attributes": {
+          "name": "ReproConnect",
+          "address_1": "3601 Sweeten Creek Road",
+          "address_2": "Ste 4",
+          "city": "Arden",
+          "state": "NC",
+          "zip": "28704",
+          "phone": "630-938-7601",
+          "fax": "630-447-0045",
+          "blasts_access": true,
+          "tax_exempt": false,
+          "address_formatted": "3601 Sweeten Creek Road\nSte 4\nArden, NC 28704",
+          "notes": "Notes about this company"
+        },
+        "links": {
+          "self": "https://api.qiplans.com/v1/companies/1"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.qiplans.com/v1/users/1"
     }
   }
 }
 ```
-> This is a simplified list of attributes, the API will return more than what you see here.
 
 This endpoint retrieves a specific user.
 

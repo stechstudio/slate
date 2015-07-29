@@ -27,7 +27,11 @@ $response = $client->get("/companies");
         "city": "Arden",
         "state": "NC",
         "zip": "28704",
-        "phone": "630-938-7601"
+        "phone": "630-938-7601",
+        "fax": "630-447-0045",
+        "blasts_access": true,
+        "tax_exempt": false,
+        "address_formatted": "3601 Sweeten Creek Road\nSte 4\nArden, NC 28704"
       },
       "links": {
         "self": "https://api.qiplans.com/v1/companies/1"
@@ -51,6 +55,9 @@ $response = $client->get("/companies");
     }
     <snip>
   ],
+  "links": {
+    "self": "https://api.qiplans.com/v1/companies"
+  },
   "meta": {
     "pagination": {
       "total": 150,
@@ -65,7 +72,6 @@ $response = $client->get("/companies");
   }
 }
 ```
-> This is a simplified list of attributes, the API will return more than what you see here.
 
 This endpoint retrieves all companies paginated.
 
@@ -191,12 +197,18 @@ $response = $client->get("/companies/1");
       "state": "NC",
       "zip": "28704",
       "phone": "630-938-7601",
+      "fax": "630-447-0045",
+      "blasts_access": true,
+      "tax_exempt": false,
+      "address_formatted": "3601 Sweeten Creek Road\nSte 4\nArden, NC 28704",
       "notes": "Notes about this company"
     }
+  },
+  "links": {
+    "self": "https://api.qiplans.com/v1/companies/1"
   }
 }
 ```
-> This is a simplified list of attributes, the API will return more than what you see here.
 
 This endpoint retrieves a specific company.
 
