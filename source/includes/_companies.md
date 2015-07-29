@@ -103,7 +103,9 @@ $response = $client->post("/companies/searches", [
 
 > This will return a list of companies that match the criteria. The structure will be exactly the same as what you would get from 'Get All Companies' above.
 
-This endpoints provides powerful, precise searching of companies.
+This endpoint provides powerful, precise searching of companies.
+
+When you submit a search request, you will be redirected to the search result. Make sure your HTTP client follows redirects. The search results will be coming from the 'Get All Companies' endpoint, with a `search` query param added. You will then be able to paginate through your search results just like you would for a normal call to 'Get All Companies' above.
 
 ### HTTP Request
 
@@ -125,7 +127,7 @@ Note the percent symbols around 'ABC' above. This will find companies where the 
 
 `[ ["state","=","NC"], ["name","like","ABC%"] ]`
 
-Furthermore we could request companies that were created within a certain date range. You could use the `>` or `<` operators here:
+Furthermore you could request companies that were created within a certain date range. You could use the `>` or `<` operators here:
 
 `[ ["state","=","NC"], ["name","like","ABC%"], ["created",">","2015-01-01"], ["created","<","2015-01-71"] ]`
 
