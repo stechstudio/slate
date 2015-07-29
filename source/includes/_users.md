@@ -95,11 +95,11 @@ This endpoint retrieves all users paginated.
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-sort | id | Specify the sorting. Can list one or more fields (comma separated). Each field can be prefixed with a minus "-" sign to indicate reverse order. So `sort=last_name,-id` would order users by last_name, newest first.
-quickSearch |  | Perform a quick search on first_name, last_name, username, email, and user name. The search is case insensitive and will return users where any of these fields *contain* the value specified.
-page | 1 | Specify the page of results to fetch.
+Parameter   | Type   | Default  | Details
+---------   | ----   | -------  | -------
+sort        | string | id       | Specify the sorting. Can list one or more fields (comma separated). Each field can be prefixed with a minus "-" sign to indicate reverse order. So `sort=last_name,-id` would order users by last_name, newest first.
+quickSearch | string |          | Perform a quick search on first_name, last_name, username, email, and user name. The search is case insensitive and will return users where any of these fields *contain* the value specified.
+page        | number | 1        | Specify the page of results to fetch.
 
 ## Advanced User Search
 
@@ -261,9 +261,9 @@ This endpoint retrieves a specific user.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the user to retrieve
+Parameter | Type | Details
+--------- | ----------- | -----------
+ID | Number | The ID of the user to retrieve
 
 ### Query Parameters
 
