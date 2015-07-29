@@ -73,7 +73,7 @@ This endpoint retrieves all users paginated.
 Parameter | Default | Description
 --------- | ------- | -----------
 sort | id | Specify the sorting. Can list one or more fields (comma separated). Each field can be prefixed with a minus "-" sign to indicate reverse order. So `sort=last_name,-id` would order users by last_name, newest first.
-quickSearch |  | Perform a quick search on first_name, last_name, username, email, and user name.
+quickSearch |  | Perform a quick search on first_name, last_name, username, email, and user name. The search is case insensitive and will return companies where these fields *contain* the value specified.
 page | 1 | Paginates results.
 
 ## Get a Specific User
