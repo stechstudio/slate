@@ -81,11 +81,11 @@ This endpoint retrieves all companies paginated.
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-sort | id | Specify the sorting. Can list one or more fields (comma separated). Each field can be prefixed with a minus "-" sign to indicate reverse order. So `sort=state,-id` would order companies by state, newest first.
-quickSearch |  | Perform a quick search on company name, address_1, city, state, or phone. The search is case insensitive and will return companies where any of these fields *contain* the value specified.
-page | 1 | Specify the page of results to fetch.
+Parameter   | Type   | Default  | Details
+---------   | ----   | -------  | -------
+sort        | string | id       | Specify the sorting. Can list one or more fields (comma separated). Each field can be prefixed with a minus "-" sign to indicate reverse order. So `sort=state,-id` would order companies by state, newest first.
+quickSearch | string |          | Perform a quick search on company name, address_1, city, state, or phone. The search is case insensitive and will return companies where any of these fields *contain* the value specified.
+page        | number | 1        | Specify the page of results to fetch.
 
 ## Advanced Company Search
 
@@ -141,20 +141,20 @@ Furthermore you could request companies that were created within a certain date 
 
 These are the fields where searching is permitted. Note the field type, make sure to only use comparison operators that support the field type.
 
-Field | Type | Details
---------- | ----------- | -----------
-id | number
-name | string
-address_1 | string
-address_2 | string
-city | string
-state | string | Will be compared against the uppercase, two-letter abbreviation
-zip | string
-phone | string
-fax | string
-tax_exempt | boolean
+Field         | Type    | Details
+---------     | -----   | -----------
+id            | number
+name          | string
+address_1     | string
+address_2     | string
+city          | string
+state         | string  | Will be compared against the uppercase, two-letter abbreviation
+zip           | string
+phone         | string
+fax           | string
+tax_exempt    | boolean
 blasts_access | boolean
-created | date
+created       | date
 
 ### Comparison Operators
 
