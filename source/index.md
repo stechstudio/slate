@@ -34,7 +34,7 @@ We have code example in Shell and PHP. You can view code examples in the dark ar
 
 # Base URL
 
-The base URL for app API calls is: `https://api.qiplans.com`
+The base URL for app API calls is: `https://api.qiplans.com/v1`
 
 # Authentication
 
@@ -42,14 +42,14 @@ The base URL for app API calls is: `https://api.qiplans.com`
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "https://api.qiplans.com" \
+curl "https://api.qiplans.com/v1" \
   -H "x-api-key: YourAPIKey"
 ```
 
 ```php
 <?php
 $client = new GuzzleHttp\Client([
-  'base_uri' => 'https://api.qiplans.com',
+  'base_uri' => 'https://api.qiplans.com/v1',
   'headers' => ['x-api-key' => 'YourAPIKey']
 ]);
 ```
