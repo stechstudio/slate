@@ -3,7 +3,7 @@
 ## Get All Users
 
 ```shell
-curl "https://api.qiplans.com/users"
+curl "https://api.qiplans.com/users" \
   -H "x-api-key: YourAPIKey"
 ```
 
@@ -55,7 +55,7 @@ $response = $client->get("/users");
       "current_page": 1,
       "total_pages": 2,
       "links": {
-        "next": "http://api.qiplans.com/users?page=2"
+        "next": "https://api.qiplans.com/users?page=2"
       }
     }
   }
@@ -79,7 +79,7 @@ page | 1 | Paginates results.
 ## Get a Specific User
 
 ```shell
-curl "http://api.qiplans.com/users/1"
+curl "https://api.qiplans.com/users/1" \
   -H "x-api-key: YourAPIKey"
 ```
 
@@ -132,9 +132,9 @@ include | Set to `company` to fetch the related company as well
 ## Create a User
 
 ```shell
-curl "http://api.qiplans.com/users"
-  -X POST
-  -d '{ "first_name" : "Gerald", "last_name" : "Gustaf", "email" : "gg@example.com", "phone" : "111-222-3333", "company_id" : 1 }'
+curl "https://api.qiplans.com/users" \
+  -X POST \
+  -d '{ "first_name" : "Gerald", "last_name" : "Gustaf", "email" : "gg@example.com", "phone" : "111-222-3333", "company_id" : 1 }' \
   -H "x-api-key: YourAPIKey"
 ```
 
@@ -182,9 +182,9 @@ company_id | **Yes** | Must reference an existing company
 ## Update a User
 
 ```shell
-curl "http://api.qiplans.com/users/1"
-  -X PATCH
-  -d '{ "first_name" : "Jerry" }'
+curl "//api.qiplans.com/users/1" \
+  -X PATCH \
+  -d '{ "first_name" : "Jerry" }' \
   -H "x-api-key: YourAPIKey"
 ```
 
@@ -219,8 +219,8 @@ See parameters under [Create a User](#create-a-user)
 ## Delete a User
 
 ```shell
-curl "http://api.qiplans.com/users/1"
-  -X DELETE
+curl "https://api.qiplans.com/users/1" \
+  -X DELETE \
   -H "x-api-key: YourAPIKey"
 ```
 

@@ -3,7 +3,7 @@
 ## Get All Companies
 
 ```shell
-curl "https://api.qiplans.com/companies"
+curl "https://api.qiplans.com/companies" \
   -H "x-api-key: YourAPIKey"
 ```
 
@@ -30,7 +30,7 @@ $response = $client->get("/companies");
         "phone": "630-938-7601"
       },
       "links": {
-        "self": "http://api.qiplans.com/companies/1"
+        "self": "https://api.qiplans.com/companies/1"
       }
     },
     {
@@ -46,7 +46,7 @@ $response = $client->get("/companies");
         "phone": ""
       },
       "links": {
-        "self": "http://api.qiplans.com/companies/2"
+        "self": "https://api.qiplans.com/companies/2"
       }
     }
     <snip>
@@ -59,7 +59,7 @@ $response = $client->get("/companies");
       "current_page": 1,
       "total_pages": 2,
       "links": {
-        "next": "http://api.qiplans.com/companies?page=2"
+        "next": "https://api.qiplans.com/companies?page=2"
       }
     }
   }
@@ -84,7 +84,7 @@ page | 1 | Paginates results.
 ## Get a Specific Company
 
 ```shell
-curl "http://api.qiplans.com/companies/1"
+curl "https://api.qiplans.com/companies/1" \
   -H "x-api-key: YourAPIKey"
 ```
 
@@ -131,9 +131,9 @@ include | Set to `users` to fetch all the users for this company as well
 ## Create a Company
 
 ```shell
-curl "http://api.qiplans.com/companies"
-  -X POST
-  -d '{ "name" : "Company Name", "phone" : "111-222-3333" }'
+curl "https://api.qiplans.com/companies" \
+  -X POST \
+  -d '{ "name" : "Company Name", "phone" : "111-222-3333" }' \
   -H "x-api-key: YourAPIKey"
 ```
 
@@ -175,9 +175,9 @@ tax_exempt | No
 ## Update a Company
 
 ```shell
-curl "http://api.qiplans.com/companies/1"
-  -X PATCH
-  -d '{ "name" : "New Company Name" }'
+curl "https://api.qiplans.com/companies/1" \
+  -X PATCH \
+  -d '{ "name" : "New Company Name" }' \
   -H "x-api-key: YourAPIKey"
 ```
 
@@ -212,8 +212,8 @@ See parameters under [Create a Company](#create-a-company)
 ## Delete a Company
 
 ```shell
-curl "http://api.qiplans.com/companies/1"
-  -X DELETE
+curl "https://api.qiplans.com/companies/1" \
+  -X DELETE \
   -H "x-api-key: YourAPIKey"
 ```
 

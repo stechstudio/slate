@@ -42,7 +42,7 @@ The base URL for app API calls is: `https://api.qiplans.com`
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "https://api.qiplans.com"
+curl "https://api.qiplans.com" \
   -H "x-api-key: YourAPIKey"
 ```
 
