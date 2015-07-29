@@ -247,7 +247,8 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.qiplans.com/companies"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{ "name" : "Company Name", "phone" : "111-222-3333" }'</span> <span class="se">\</span>
-  -H <span class="s2">"x-api-key: YourAPIKey"</span>
+  -H <span class="s2">"x-api-key: YourAPIKey"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s2">"/companies"</span><span class="p">,</span> <span class="p">[</span>
@@ -337,7 +338,8 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.qiplans.com/companies/1"</span> <span class="se">\</span>
   -X PATCH <span class="se">\</span>
   -d <span class="s1">'{ "name" : "New Company Name" }'</span> <span class="se">\</span>
-  -H <span class="s2">"x-api-key: YourAPIKey"</span>
+  -H <span class="s2">"x-api-key: YourAPIKey"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">patch</span><span class="p">(</span><span class="s2">"/companies/1"</span><span class="p">,</span> <span class="p">[</span>
@@ -567,7 +569,8 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.qiplans.com/users"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{ "first_name" : "Gerald", "last_name" : "Gustaf", "email" : "gg@example.com", "phone" : "111-222-3333", "company_id" : 1 }'</span> <span class="se">\</span>
-  -H <span class="s2">"x-api-key: YourAPIKey"</span>
+  -H <span class="s2">"x-api-key: YourAPIKey"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s2">"/users"</span><span class="p">,</span> <span class="p">[</span>
@@ -668,7 +671,8 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <pre class="highlight shell"><code>curl <span class="s2">"//api.qiplans.com/users/1"</span> <span class="se">\</span>
   -X PATCH <span class="se">\</span>
   -d <span class="s1">'{ "first_name" : "Jerry" }'</span> <span class="se">\</span>
-  -H <span class="s2">"x-api-key: YourAPIKey"</span>
+  -H <span class="s2">"x-api-key: YourAPIKey"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span>
 </code></pre>
 <pre class="highlight php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">patch</span><span class="p">(</span><span class="s2">"/users/1"</span><span class="p">,</span> <span class="p">[</span>
