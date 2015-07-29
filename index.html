@@ -186,6 +186,181 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 </tr>
 </tbody></table>
 
+<h2 id="advanced-company-search">Advanced Company Search</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.qiplans.com/v1/companies/searches"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'[ ["name","like","ABC%"], ["created","&gt;","2015-01-01"] ]'</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -H <span class="s2">"x-api-key: YourAPIKey"</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s2">"/companies/searches"</span><span class="p">,</span> <span class="p">[</span>
+  <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span><span class="s2">"like"</span><span class="p">,</span><span class="s2">"ABC%"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"created"</span><span class="p">,</span><span class="s2">"&gt;"</span><span class="p">,</span><span class="s2">"2015-01-01"</span><span class="p">]</span>
+  <span class="p">]</span>
+<span class="p">]);</span>
+</code></pre>
+
+<blockquote>
+<p>This will return a list of companies that match the criteria. The structure will be exactly the same as what you would get from &lsquo;Get All Companies&rsquo; above.</p>
+</blockquote>
+
+<p>This endpoints provides powerful, precise searching of companies.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /companies/searches</code></p>
+
+<h3 id="json-body">JSON Body</h3>
+
+<p>The request body must be a JSON array, with each search criterion specified as a sub-array with exactly three elements. The first element is the field name, the second is the comparison operator, and the third is the value.</p>
+
+<p>For example, to find companies that are in the state of NC, you submit this request:</p>
+
+<p><code class="prettyprint">[ [&quot;state&quot;,&quot;=&quot;,&quot;NC&quot;] ]</code></p>
+
+<p>To specify multiple filters, simply create multiple sub-arrays:</p>
+
+<p><code class="prettyprint">[ [&quot;state&quot;,&quot;=&quot;,&quot;NC&quot;], [&quot;name&quot;,&quot;like&quot;,&quot;%ABC%&quot;] ]</code></p>
+
+<p>Note the percent symbols around &#39;ABC&rsquo; above. This will find companies where the company name <em>contains</em> &#39;ABC&rsquo; anywhere. If you wanted instead to find companies that <em>start</em> with &#39;ABC&rsquo; simply omit the first percent symbol:</p>
+
+<p><code class="prettyprint">[ [&quot;state&quot;,&quot;=&quot;,&quot;NC&quot;], [&quot;name&quot;,&quot;like&quot;,&quot;ABC%&quot;] ]</code></p>
+
+<p>Furthermore we could request companies that were created within a certain date range. You could use the <code class="prettyprint">&gt;</code> or <code class="prettyprint">&lt;</code> operators here:</p>
+
+<p><code class="prettyprint">[ [&quot;state&quot;,&quot;=&quot;,&quot;NC&quot;], [&quot;name&quot;,&quot;like&quot;,&quot;ABC%&quot;], [&quot;created&quot;,&quot;&gt;&quot;,&quot;2015-01-01&quot;], [&quot;created&quot;,&quot;&lt;&quot;,&quot;2015-01-71&quot;] ]</code></p>
+
+<h3 id="searchable-fields">Searchable Fields</h3>
+
+<p>These are the fields where searching is permitted. Note the field type, make sure to only use comparison operators that support the field type.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>address_1</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>address_2</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>Will be compared against the uppercase, two-letter abbreviation</td>
+</tr>
+<tr>
+<td>zip</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>fax</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>tax_exempt</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>blasts_access</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td>date</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h3 id="comparison-operators">Comparison Operators</h3>
+
+<table><thead>
+<tr>
+<th>Operator</th>
+<th>Types</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>=</td>
+<td>all</td>
+<td>Requires a complete, case sensitive match</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>numbers, dates</td>
+<td>Less than</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>numbers, dates</td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>numbers, dates</td>
+<td>Less than or equal to</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>numbers, dates</td>
+<td>Greater than or equal to</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>all</td>
+<td>Not equal to</td>
+</tr>
+<tr>
+<td>like</td>
+<td>strings</td>
+<td>Partial match, use in conjunction with the percent symbol</td>
+</tr>
+<tr>
+<td>not like</td>
+<td>strings</td>
+<td>Partial match, use in conjunction with the percent symbol</td>
+</tr>
+<tr>
+<td>ilike</td>
+<td>strings</td>
+<td>Partial match, case insensitive. Use in conjunction with the percent symbol</td>
+</tr>
+</tbody></table>
+
 <h2 id="get-a-specific-company">Get a Specific Company</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.qiplans.com/v1/companies/1"</span> <span class="se">\</span>
   -H <span class="s2">"x-api-key: YourAPIKey"</span>
@@ -397,7 +572,7 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 </code></pre>
 
 <blockquote>
-<p>The above command returns a &lsquo;200 OK&rsquo; HTTP response if successful, with an empty body.</p>
+<p>The above command returns a &#39;200 OK&rsquo; HTTP response if successful, with an empty body.</p>
 </blockquote>
 
 <p>This endpoint deletes a specific company.</p>
@@ -643,7 +818,7 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <tr>
 <td>password</td>
 <td>No</td>
-<td>If not specified, a random password will be generated</td>
+<td>Requires minimum 8 characters, uppercase and lowercase letters, and at least one number. If not specified, a random password will be generated.</td>
 </tr>
 <tr>
 <td>email</td>
@@ -704,7 +879,7 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <p>The above command returns the updated user JSON structure. See above under &ldquo;Get a Specific User&rdquo; for an example.</p>
 </blockquote>
 
-<p>This endpoint updated a specific user.</p>
+<p>This endpoint updates a specific user.</p>
 
 <p>The body of the request must include a properly formatted JSON document.</p>
 
