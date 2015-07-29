@@ -113,11 +113,11 @@ This endpoints provides powerful, precise searching of companies.
 
 The request body must be a JSON array, with each search criterion specified as a sub-array with exactly three elements. The first element is the field name, the second is the comparison operator, and the third is the value.
 
-For example, to find companies that are in the state of NC, you submit this request:
+For example, to find companies that are in the state of NC, you would submit this request:
 
 `[ ["state","=","NC"] ]`
 
-To specify multiple filters, simply create multiple sub-arrays:
+To specify multiple criteria, simply create multiple sub-arrays:
 
 `[ ["state","=","NC"], ["name","like","%ABC%"] ]`
 
