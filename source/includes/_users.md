@@ -155,35 +155,35 @@ Furthermore you could request users that have logged in since a particular date:
 
 These are the fields where searching is permitted. Note the field type, make sure to only use comparison operators that support the field type.
 
-Field | Type | Details
---------- | ----------- | -----------
-id | number
+Field     | Type  | Details
+--------- | ----- | -------
+id        | number
 first_name | string
 last_name | string
-username | string
-email | string
-phone | string
-fax | string
-mobile | string
+username  | string
+email     | string
+phone     | string
+fax       | string
+mobile    | string
 confirmed | boolean
-verified | boolean
+verified  | boolean
 last_login | date
-created | date
+created   | date
 company_id | number
 
 ### Comparison Operators
 
-Operator | Types | Details
---------- | ----------- | -----------
-= | all | Requires a complete, case sensitive match
-< | numbers, dates | Less than
-\> | numbers, dates | Greater than
-<= | numbers, dates | Less than or equal to
-\>= | numbers, dates | Greater than or equal to
-!= | all | Not equal to
-like | strings | Partial match, use in conjunction with the percent symbol
-not like | strings | Partial match, use in conjunction with the percent symbol
-ilike | strings | Partial match, case insensitive. Use in conjunction with the percent symbol
+Operator  |  Types          | Details
+--------  | -------         | -------
+=         | all             | Requires a complete, case sensitive match
+<         | numbers, dates  | Less than
+\>        | numbers, dates  | Greater than
+<=        | numbers, dates  | Less than or equal to
+\>=       | numbers, dates  | Greater than or equal to
+!=        | all             | Not equal to
+like      | strings         | Partial match, use in conjunction with the percent symbol
+not like  | strings         | Partial match, use in conjunction with the percent symbol
+ilike     | strings         | Partial match, case insensitive. Use in conjunction with the percent symbol
 
 ## Get a Specific User
 
@@ -261,15 +261,15 @@ This endpoint retrieves a specific user.
 
 ### URL Parameters
 
-Parameter | Type | Details
---------- | ----------- | -----------
-ID | Number | The ID of the user to retrieve
+Parameter | Type    | Details
+--------- | ------  | -------
+ID        | number  | The ID of the user to retrieve
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-include | Set to `company` to fetch the related company as well
+Parameter | Type   | Details
+--------- | ----   | -------
+include   | string | Set to `company` to fetch the related company as well
 
 ## Create a User
 
@@ -307,20 +307,20 @@ The body of the POST request must include a properly formatted JSON document.
 
 ### JSON Body Parameters
 
-Parameter | Required | Comments
---------- | ----------- | -----------
-first_name | **Yes**
-last_name | **Yes**
-username | No | If not specified, the email address will be used as the username
-password | No | Requires minimum 8 characters, uppercase and lowercase letters, and at least one number. If not specified, a random password will be generated.
-email | **Yes**
-phone | No
-title | No
-member | No | Only applicable if your planroom is setup as a membership planroom
-verified | No
-confirmed | No | Will be set to `true` by default. If `false` the user will have to confirm their email address before logging in.
-notes | No
-company_id | **Yes** | Must reference an existing company
+Parameter   | Type    | Required  | Details
+---------   | ----    | --------- | -----------
+first_name  | string  | **Yes**
+last_name   | string  | **Yes**
+username    | string  | No        | If not specified, the email address will be used as the username
+password    | string  | No        | Requires minimum 8 characters, uppercase and lowercase letters, and at least one number. If not specified, a random password will be generated.
+email       | string  | **Yes**
+phone       | string  | No
+title       | string  | No
+member      | boolean | No        | Only applicable if your planroom is setup as a membership planroom
+verified    | boolean | No
+confirmed   | boolean | No        | Will be set to `true` by default. If `false` the user will have to confirm their email address before logging in.
+notes       | string  | No
+company_id  | number  | **Yes**   | Must reference an existing company
 
 ## Update a User
 
@@ -352,9 +352,9 @@ The body of the request must include a properly formatted JSON document.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the user to update
+Parameter | Type    | Details
+--------- | ----    | -------
+ID        | number  | The ID of the user to update
 
 ### JSON Body Parameters
 
@@ -384,6 +384,6 @@ This endpoint deletes a specific user.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the user to delete
+Parameter | Type    | Details
+--------- | ----    | -------
+ID        | number  | The ID of the user to delete
