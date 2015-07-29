@@ -175,7 +175,7 @@ phone | No
 title | No
 member | No | Only applicable if your planroom is setup as a membership planroom
 verified | No
-confirmed | No | Will be set to `true` by default
+confirmed | No | Will be set to `true` by default. If `false` the user will have to confirm their email address before logging in.
 notes | No
 company_id | **Yes** | Must reference an existing company
 

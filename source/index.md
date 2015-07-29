@@ -28,7 +28,7 @@ PHP code examples use Guzzle. See http://guzzlephp.org
 
 Welcome to the ReproConnect API. You can use our API to interact with (some of) your planroom.
 
-This API is organized around <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>. Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which can be understood by off-the-shelf HTTP clients.
+This API is organized around <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> principles and the JSON data format. Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors.
 
 We have code example in Shell and PHP. You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
