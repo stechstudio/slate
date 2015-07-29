@@ -88,7 +88,7 @@ curl "https://api.qiplans.com/v1/users/searches" \
 
 ```php
 <?php
-$response = $client->post("/companies/searches", [
+$response = $client->post("/users/searches", [
   'json' => [
     ["first_name","=","Fred"],
     ["last_login",">","2015-08-01"]
