@@ -689,6 +689,188 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 </tr>
 </tbody></table>
 
+<h2 id="advanced-user-search">Advanced User Search</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.qiplans.com/v1/users/searches"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'[ ["first_name","=","Fred"], ["last_login","&gt;","2015-08-01"] ]'</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -H <span class="s2">"x-api-key: YourAPIKey"</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s2">"/companies/searches"</span><span class="p">,</span> <span class="p">[</span>
+  <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">"first_name"</span><span class="p">,</span><span class="s2">"="</span><span class="p">,</span><span class="s2">"Fred"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"last_login"</span><span class="p">,</span><span class="s2">"&gt;"</span><span class="p">,</span><span class="s2">"2015-08-01"</span><span class="p">]</span>
+  <span class="p">]</span>
+<span class="p">]);</span>
+</code></pre>
+
+<blockquote>
+<p>This will return a list of users that match the criteria. The structure will be exactly the same as what you would get from &lsquo;Get All Users&rsquo; above.</p>
+</blockquote>
+
+<p>This endpoint provides powerful, precise searching of users.</p>
+
+<p>When you submit a search request, you will be redirected to the search result. Make sure your HTTP client follows redirects. The search results will be coming from the &#39;Get All Users&rsquo; endpoint, with a <code class="prettyprint">search</code> query param added. You will then be able to paginate through your search results just like you would for a normal call to &#39;Get All Users&rsquo; above.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /users/searches</code></p>
+
+<h3 id="json-body">JSON Body</h3>
+
+<p>The request body must be a JSON array, with each search criterion specified as a sub-array with exactly three elements. The first element is the field name, the second is the comparison operator, and the third is the value.</p>
+
+<p>For example, to find users that have a last name of Smith, you would submit this request:</p>
+
+<p><code class="prettyprint">[ [&quot;last_name&quot;,&quot;=&quot;,&quot;Smith&quot;] ]</code></p>
+
+<p>To specify multiple criteria, simply create multiple sub-arrays:</p>
+
+<p><code class="prettyprint">[ [&quot;last_name&quot;,&quot;=&quot;,&quot;Smith&quot;], [&quot;email&quot;,&quot;like&quot;,&quot;%gmail%&quot;] ]</code></p>
+
+<p>Note the percent symbols around &#39;gmail&rsquo; above. This will find users where the email <em>contains</em> &#39;gmail&rsquo; anywhere. If you wanted instead to find user that <em>end exactly</em> with &#39;gmail.com&rsquo; just use the first percent symbol:</p>
+
+<p><code class="prettyprint">[ [&quot;last_name&quot;,&quot;=&quot;,&quot;Smith&quot;], [&quot;email&quot;,&quot;like&quot;,&quot;%gmail.com&quot;] ]</code></p>
+
+<p>Furthermore you could request users that have logged in since a particular date:</p>
+
+<p><code class="prettyprint">[ [&quot;last_name&quot;,&quot;=&quot;,&quot;Smith&quot;], [&quot;email&quot;,&quot;like&quot;,&quot;%gmail.com&quot;], [&quot;last_login&quot;,&quot;&gt;&quot;,&quot;2015-08-01&quot;] ]</code></p>
+
+<h3 id="searchable-fields">Searchable Fields</h3>
+
+<p>These are the fields where searching is permitted. Note the field type, make sure to only use comparison operators that support the field type.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>fax</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>confirmed</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>verified</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>last_login</td>
+<td>date</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td>date</td>
+<td></td>
+</tr>
+<tr>
+<td>company_id</td>
+<td>number</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h3 id="comparison-operators">Comparison Operators</h3>
+
+<table><thead>
+<tr>
+<th>Operator</th>
+<th>Types</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>=</td>
+<td>all</td>
+<td>Requires a complete, case sensitive match</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>numbers, dates</td>
+<td>Less than</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>numbers, dates</td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>numbers, dates</td>
+<td>Less than or equal to</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>numbers, dates</td>
+<td>Greater than or equal to</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>all</td>
+<td>Not equal to</td>
+</tr>
+<tr>
+<td>like</td>
+<td>strings</td>
+<td>Partial match, use in conjunction with the percent symbol</td>
+</tr>
+<tr>
+<td>not like</td>
+<td>strings</td>
+<td>Partial match, use in conjunction with the percent symbol</td>
+</tr>
+<tr>
+<td>ilike</td>
+<td>strings</td>
+<td>Partial match, case insensitive. Use in conjunction with the percent symbol</td>
+</tr>
+</tbody></table>
+
 <h2 id="get-a-specific-user">Get a Specific User</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.qiplans.com/v1/users/1"</span> <span class="se">\</span>
   -H <span class="s2">"x-api-key: YourAPIKey"</span>
@@ -917,7 +1099,7 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 </code></pre>
 
 <blockquote>
-<p>The above command returns a &lsquo;200 OK&rsquo; HTTP response if successful, with an empty body.</p>
+<p>The above command returns a &#39;200 OK&rsquo; HTTP response if successful, with an empty body.</p>
 </blockquote>
 
 <p>This endpoint deletes a specific user.</p>
