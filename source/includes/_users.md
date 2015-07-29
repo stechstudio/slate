@@ -118,7 +118,7 @@ To specify multiple criteria, simply create multiple sub-arrays:
 
 `[ ["last_name","=","Smith"], ["email","like","%gmail%"] ]`
 
-Note the percent symbols around 'gmail' above. This will find users where the email *contains* 'gmail' anywhere. If you wanted instead to find user that *end exactly* with 'gmail.com' just use the first percent symbol:
+Note the percent symbols around 'gmail' above. This will find users where the email *contains* 'gmail' anywhere. If you wanted instead to find user that *ends exactly* with 'gmail.com' just use the first percent symbol:
 
 `[ ["last_name","=","Smith"], ["email","like","%gmail.com"] ]`
 
