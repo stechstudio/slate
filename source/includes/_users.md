@@ -74,7 +74,7 @@ Parameter | Default | Description
 --------- | ------- | -----------
 sort | id | Specify the sorting. Can list one or more fields (comma separated). Each field can be prefixed with a minus "-" sign to indicate reverse order. So `sort=last_name,-id` would order users by last_name, newest first.
 quickSearch |  | Perform a quick search on first_name, last_name, username, email, and user name. The search is case insensitive and will return users where any of these fields *contain* the value specified.
-page | 1 | Specify the page of results to fetch. 
+page | 1 | Specify the page of results to fetch.
 
 ## Get a Specific User
 
@@ -155,7 +155,7 @@ $response = $client->post("/users", [
 > The above command returns the new user JSON structure. See above under "Get a Specific User" for an example.
 
 
-This endpoint created a new user.
+This endpoint creates a new user.
 
 The body of the POST request must include a properly formatted JSON document.
 

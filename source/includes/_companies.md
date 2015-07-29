@@ -79,7 +79,7 @@ Parameter | Default | Description
 --------- | ------- | -----------
 sort | id | Specify the sorting. Can list one or more fields (comma separated). Each field can be prefixed with a minus "-" sign to indicate reverse order. So `sort=state,-id` would order companies by state, newest first.
 quickSearch |  | Perform a quick search on company name, address_1, city, state, or phone. The search is case insensitive and will return companies where any of these fields *contain* the value specified.
-page | 1 | Specify the page of results to fetch. 
+page | 1 | Specify the page of results to fetch.
 
 ## Get a Specific Company
 
@@ -148,7 +148,7 @@ $response = $client->post("/companies", [
 > The above command returns the new company JSON structure. See above under "Get a Specific Company" for an example.
 
 
-This endpoint created a new company.
+This endpoint creates a new company.
 
 The body of the POST request must include a properly formatted JSON document.
 
