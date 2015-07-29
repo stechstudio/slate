@@ -30,7 +30,7 @@ Welcome to the ReproConnect API. You can use our API to interact with (some of) 
 
 This API is organized around <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> principles and the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> data format. Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors.
 
-We have code example in Shell and PHP. You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs at the top.
+We have code examples in Shell and PHP. You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs at the top.
 
 # Base URL
 
