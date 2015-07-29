@@ -699,22 +699,26 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Type</th>
 <th>Default</th>
-<th>Description</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>sort</td>
+<td>string</td>
 <td>id</td>
 <td>Specify the sorting. Can list one or more fields (comma separated). Each field can be prefixed with a minus &ldquo;-&rdquo; sign to indicate reverse order. So <code class="prettyprint">sort=last_name,-id</code> would order users by last_name, newest first.</td>
 </tr>
 <tr>
 <td>quickSearch</td>
+<td>string</td>
 <td></td>
 <td>Perform a quick search on first_name, last_name, username, email, and user name. The search is case insensitive and will return users where any of these fields <em>contain</em> the value specified.</td>
 </tr>
 <tr>
 <td>page</td>
+<td>number</td>
 <td>1</td>
 <td>Specify the page of results to fetch.</td>
 </tr>
@@ -977,11 +981,13 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Description</th>
+<th>Type</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
+<td>Number</td>
 <td>The ID of the user to retrieve</td>
 </tr>
 </tbody></table>
