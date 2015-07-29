@@ -27,7 +27,8 @@ $response = $client->get("/users");
         "username": "edcarter",
         "email": "edcarter@example.com",
         "title": "",
-        "phone": ""
+        "phone": "",
+        "company_id": 1
       }
     },
     {
@@ -40,7 +41,8 @@ $response = $client->get("/users");
         "username": "john.doe",
         "email": "jdoe@example.com",
         "title": "Estimator",
-        "phone": ""
+        "phone": "",
+        "company_id": 2
       }
     }
     <snip>
@@ -112,6 +114,7 @@ $response = $client->get("/users/1");
   }
 }
 ```
+> This is a simplified list of attributes, the API will return more than what you see here.
 
 This endpoint retrieves a specific user.
 
@@ -124,14 +127,14 @@ This endpoint retrieves a specific user.
 Parameter | Description
 --------- | -----------
 ID | The ID of the user to retrieve
-include | If set to `users` will return all the users for this user as well.
+include | Set to `company` to fetch the related company as well
 
 ## Create a User
 
 ```shell
 curl "http://api.qiplans.com/users"
   -X POST
-  -d '{ "first_name" : "Gerald", "last_name" : "Gustaf", "email" : "gg@example.com", "phone" : "111-222-3333" }'
+  -d '{ "first_name" : "Gerald", "last_name" : "Gustaf", "email" : "gg@example.com", "phone" : "111-222-3333", "company_id" : 1 }'
   -H "x-api-key: YourAPIKey"
 ```
 

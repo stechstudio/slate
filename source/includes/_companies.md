@@ -65,6 +65,7 @@ $response = $client->get("/companies");
   }
 }
 ```
+> This is a simplified list of attributes, the API will return more than what you see here.
 
 This endpoint retrieves all companies paginated.
 
@@ -112,6 +113,7 @@ $response = $client->get("/companies/1");
   }
 }
 ```
+> This is a simplified list of attributes, the API will return more than what you see here.
 
 This endpoint retrieves a specific company.
 
@@ -124,7 +126,7 @@ This endpoint retrieves a specific company.
 Parameter | Description
 --------- | -----------
 ID | The ID of the company to retrieve
-include | If set to `users` will return all the users for this company as well.
+include | Set to `users` to fetch all the users for this company as well
 
 ## Create a Company
 
