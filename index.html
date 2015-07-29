@@ -111,7 +111,11 @@ You must replace <code>YourAPIKey</code> with your personal API key.
         </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arden"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28704"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630-938-7601"</span><span class="w">
+        </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630-938-7601"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630-447-0045"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"blasts_access"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"tax_exempt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"address_formatted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3601 Sweeten Creek Road\nSte 4\nArden, NC 28704"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/companies/1"</span><span class="w">
@@ -135,6 +139,9 @@ You must replace <code>YourAPIKey</code> with your personal API key.
     </span><span class="p">}</span><span class="w">
     </span><span class="err">&lt;snip&gt;</span><span class="w">
   </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/companies"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
@@ -149,10 +156,6 @@ You must replace <code>YourAPIKey</code> with your personal API key.
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
-<blockquote>
-<p>This is a simplified list of attributes, the API will return more than what you see here.</p>
-</blockquote>
 
 <p>This endpoint retrieves all companies paginated.</p>
 
@@ -386,15 +389,18 @@ You must replace <code>YourAPIKey</code> with your personal API key.
       </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28704"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630-938-7601"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630-447-0045"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"blasts_access"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tax_exempt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"address_formatted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3601 Sweeten Creek Road\nSte 4\nArden, NC 28704"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Notes about this company"</span><span class="w">
     </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/companies/1"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
-<blockquote>
-<p>This is a simplified list of attributes, the API will return more than what you see here.</p>
-</blockquote>
 
 <p>This endpoint retrieves a specific company.</p>
 
@@ -623,7 +629,18 @@ You must replace <code>YourAPIKey</code> with your personal API key.
         </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"edcarter@example.com"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="nt">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"member"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"credit_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"last_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon, 01 Feb 15 16:01:29 +0000"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"last_login_approx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 months ago"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/users/1"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -637,11 +654,25 @@ You must replace <code>YourAPIKey</code> with your personal API key.
         </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estimator"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="nt">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"member"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"credit_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"last_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon, 06 Apr 15 20:22:03 +0000"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"last_login_approx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3 months ago"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/users/2"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
     </span><span class="err">&lt;snip&gt;</span><span class="w">
   </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/users"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
@@ -898,17 +929,42 @@ You must replace <code>YourAPIKey</code> with your personal API key.
       </span><span class="nt">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nt">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nt">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"last_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon, 06 Apr 15 20:22:03 +0000"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"last_login_approx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3 months ago"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="nt">"member"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"credit_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon, 01 Feb 15 16:01:29 +0000"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_login_approx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 months ago"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Notes about this user"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"companies"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ReproConnect"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3601 Sweeten Creek Road"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ste 4"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arden"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28704"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630-938-7601"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630-447-0045"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"blasts_access"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"tax_exempt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"address_formatted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3601 Sweeten Creek Road\nSte 4\nArden, NC 28704"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Notes about this company"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/companies/1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/users/1"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
-<blockquote>
-<p>This is a simplified list of attributes, the API will return more than what you see here.</p>
-</blockquote>
 
 <p>This endpoint retrieves a specific user.</p>
 
