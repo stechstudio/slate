@@ -126,6 +126,11 @@ This endpoint retrieves a specific company.
 Parameter | Description
 --------- | -----------
 ID | The ID of the company to retrieve
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
 include | Set to `users` to fetch all the users for this company as well
 
 ## Create a Company

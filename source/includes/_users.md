@@ -127,6 +127,11 @@ This endpoint retrieves a specific user.
 Parameter | Description
 --------- | -----------
 ID | The ID of the user to retrieve
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
 include | Set to `company` to fetch the related company as well
 
 ## Create a User
