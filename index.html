@@ -239,7 +239,7 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 
 <p>Furthermore you could request companies that were created within a certain date range. You could use the <code class="prettyprint">&gt;</code> or <code class="prettyprint">&lt;</code> operators here:</p>
 
-<p><code class="prettyprint">[ [&quot;state&quot;,&quot;=&quot;,&quot;NC&quot;], [&quot;name&quot;,&quot;like&quot;,&quot;ABC%&quot;], [&quot;created&quot;,&quot;&gt;&quot;,&quot;2015-01-01&quot;], [&quot;created&quot;,&quot;&lt;&quot;,&quot;2015-01-71&quot;] ]</code></p>
+<p><code class="prettyprint">[ [&quot;state&quot;,&quot;=&quot;,&quot;NC&quot;], [&quot;name&quot;,&quot;like&quot;,&quot;ABC%&quot;], [&quot;created&quot;,&quot;&gt;&quot;,&quot;2015-01-01&quot;], [&quot;created&quot;,&quot;&lt;&quot;,&quot;2015-08-01&quot;] ]</code></p>
 
 <h3 id="searchable-fields">Searchable Fields</h3>
 
@@ -417,11 +417,13 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Description</th>
+<th>Type</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
+<td>number</td>
 <td>The ID of the company to retrieve</td>
 </tr>
 </tbody></table>
@@ -431,11 +433,13 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Description</th>
+<th>Type</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>include</td>
+<td>string</td>
 <td>Set to <code class="prettyprint">users</code> to fetch all the users for this company as well</td>
 </tr>
 </tbody></table>
@@ -470,62 +474,74 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Type</th>
 <th>Required</th>
-<th>Comments</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>name</td>
+<td>string</td>
 <td><strong>Yes</strong></td>
 <td></td>
 </tr>
 <tr>
 <td>address_1</td>
+<td>string</td>
 <td>No</td>
 <td></td>
 </tr>
 <tr>
 <td>address_2</td>
+<td>string</td>
 <td>No</td>
 <td></td>
 </tr>
 <tr>
 <td>city</td>
+<td>string</td>
 <td>No</td>
 <td></td>
 </tr>
 <tr>
 <td>state</td>
+<td>string</td>
 <td>No</td>
 <td>Must be a two-letter abbreviation</td>
 </tr>
 <tr>
 <td>zip</td>
+<td>string</td>
 <td>No</td>
 <td></td>
 </tr>
 <tr>
 <td>phone</td>
+<td>string</td>
 <td>No</td>
 <td></td>
 </tr>
 <tr>
 <td>fax</td>
+<td>string</td>
 <td>No</td>
 <td></td>
 </tr>
 <tr>
 <td>notes</td>
+<td>string</td>
 <td>No</td>
 <td></td>
 </tr>
 <tr>
 <td>blasts_access</td>
+<td>boolean</td>
 <td>No</td>
 <td>Allows access to the private &ldquo;dashboard&rdquo; area where verified users can manage contacts and send blasts</td>
 </tr>
 <tr>
 <td>tax_exempt</td>
+<td>boolean</td>
 <td>No</td>
 <td></td>
 </tr>
@@ -561,11 +577,13 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Description</th>
+<th>Type</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
+<td>number</td>
 <td>The ID of the company to update</td>
 </tr>
 </tbody></table>
@@ -598,11 +616,13 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Description</th>
+<th>Type</th>
+<th>Details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
+<td>number</td>
 <td>The ID of the company to delete</td>
 </tr>
 </tbody></table>
