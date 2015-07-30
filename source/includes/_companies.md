@@ -135,7 +135,7 @@ Note the percent symbols around 'ABC' above. This will find companies where the 
 
 Furthermore you could request companies that were created within a certain date range. You could use the `>` or `<` operators here:
 
-`[ ["state","=","NC"], ["name","like","ABC%"], ["created",">","2015-01-01"], ["created","<","2015-01-71"] ]`
+`[ ["state","=","NC"], ["name","like","ABC%"], ["created",">","2015-01-01"], ["created","<","2015-08-01"] ]`
 
 ### Searchable Fields
 
@@ -158,17 +158,17 @@ created       | date
 
 ### Comparison Operators
 
-Operator | Types | Details
---------- | ----------- | -----------
-= | all | Requires a complete, case sensitive match
-< | numbers, dates | Less than
-\> | numbers, dates | Greater than
-<= | numbers, dates | Less than or equal to
-\>= | numbers, dates | Greater than or equal to
-!= | all | Not equal to
-like | strings | Partial match, use in conjunction with the percent symbol
-not like | strings | Partial match, use in conjunction with the percent symbol
-ilike | strings | Partial match, case insensitive. Use in conjunction with the percent symbol
+Operator  |  Types          | Details
+--------  | -------         | -------
+=         | all             | Requires a complete, case sensitive match
+<         | numbers, dates  | Less than
+\>        | numbers, dates  | Greater than
+<=        | numbers, dates  | Less than or equal to
+\>=       | numbers, dates  | Greater than or equal to
+!=        | all             | Not equal to
+like      | strings         | Partial match, use in conjunction with the percent symbol
+not like  | strings         | Partial match, use in conjunction with the percent symbol
+ilike     | strings         | Partial match, case insensitive. Use in conjunction with the percent symbol
 
 ## Get a Specific Company
 
@@ -218,15 +218,15 @@ This endpoint retrieves a specific company.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the company to retrieve
+Parameter | Type    | Details
+--------- | ----    | -------
+ID        | number  | The ID of the company to retrieve
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-include | Set to `users` to fetch all the users for this company as well
+Parameter | Type   | Details
+--------- | ----   | -------
+include   | string | Set to `users` to fetch all the users for this company as well
 
 ## Create a Company
 
@@ -258,19 +258,19 @@ The body of the POST request must include a properly formatted JSON document.
 
 ### JSON Body Parameters
 
-Parameter | Required | Comments
---------- | ----------- | -----------
-name | **Yes**
-address_1 | No
-address_2 | No
-city | No
-state | No | Must be a two-letter abbreviation
-zip | No
-phone | No
-fax | No
-notes | No
-blasts_access | No | Allows access to the private "dashboard" area where verified users can manage contacts and send blasts
-tax_exempt | No
+Parameter     | Type    | Required  | Details
+---------     | ----    | --------  | -----------
+name          | string  |  **Yes**
+address_1     | string  | No
+address_2     | string  | No
+city          | string  | No
+state         | string  | No        | Must be a two-letter abbreviation
+zip           | string  | No
+phone         | string  | No
+fax           | string  | No
+notes         | string  | No
+blasts_access | boolean | No        | Allows access to the private "dashboard" area where verified users can manage contacts and send blasts
+tax_exempt    | boolean | No
 
 
 ## Update a Company
@@ -303,9 +303,9 @@ The body of the request must include a properly formatted JSON document.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the company to update
+Parameter | Type    | Details
+--------- | ----    | -------
+ID        | number  | The ID of the company to update
 
 ### JSON Body Parameters
 
@@ -335,6 +335,6 @@ This endpoint deletes a specific company.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the company to delete
+Parameter | Type    | Details
+--------- | ----    | -------
+ID        | number  | The ID of the company to delete
