@@ -320,7 +320,8 @@ member      | boolean | No        | Only applicable if your planroom is setup as
 verified    | boolean | No
 confirmed   | boolean | No        | Will be set to `true` by default. If `false` the user will have to confirm their email address before logging in.
 notes       | string  | No
-company_id  | number  | **Yes**   | Must reference an existing company
+company_id  | number  | **Yes**   | Must reference an existing company. You must provide this ID *or* a nested `company` object.
+company     | object  | **Yes**   | Valid nested JSON object for a new company. See [Create a Company](#create-a-company) for details. You must provide this company object *or* an existing `company_id`.
 
 ## Update a User
 
