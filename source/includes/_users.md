@@ -280,7 +280,7 @@ curl "https://api.qiplans.com/v1/users" \
   -H "Content-Type: application/json" \
   -H "x-api-key: YourAPIKey"
 
-// OR
+# OR
 
 curl "https://api.qiplans.com/v1/users" \
   -X POST \
