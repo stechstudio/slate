@@ -344,7 +344,7 @@ verified    | boolean | No
 confirmed   | boolean | No        | Will be set to `true` by default. If `false` the user will have to confirm their email address before logging in.
 notes       | string  | No
 company_id  | number  | **Yes**   | Must reference an existing company. You must provide this ID *or* a nested `company` object.
-company     | object  | **Yes**   | Valid nested JSON object for a new company. See [Create a Company](#create-a-company) for details. You must provide this company object *or* an existing `company_id`.
+company     | object  | **Yes**   | Valid nested JSON object for a new company. See [Create a Company](#create-a-company) for details. You must provide this company object *or* an existing `company_id`. <br><br> **Note:** When submitted a company object inside a new user like this, the API will first check to see if a matching company already exists. This duplicate check compares the company name, address, and phone. If a match is found, the new user is linked up to the *existing* company record.
 
 ## Update a User
 
