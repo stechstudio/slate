@@ -1143,7 +1143,13 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <td>company_id</td>
 <td>number</td>
 <td><strong>Yes</strong></td>
-<td>Must reference an existing company</td>
+<td>Must reference an existing company. You must provide this ID <em>or</em> a nested <code class="prettyprint">company</code> object.</td>
+</tr>
+<tr>
+<td>company</td>
+<td>object</td>
+<td><strong>Yes</strong></td>
+<td>Valid nested JSON object for a new company. See <a href="#create-a-company">Create a Company</a> for details. You must provide this company object <em>or</em> an existing <code class="prettyprint">company_id</code>.</td>
 </tr>
 </tbody></table>
 
