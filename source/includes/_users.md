@@ -279,6 +279,14 @@ curl "https://api.qiplans.com/v1/users" \
   -d '{ "first_name" : "Gerald", "last_name" : "Gustaf", "email" : "gg@example.com", "phone" : "111-222-3333", "company_id" : 1 }' \
   -H "Content-Type: application/json" \
   -H "x-api-key: YourAPIKey"
+
+// OR
+
+curl "https://api.qiplans.com/v1/users" \
+  -X POST \
+  -d '{ "first_name" : "Gerald", "last_name" : "Gustaf", "email" : "gg@example.com", "phone" : "111-222-3333", "company" : { "name" : "New Company Name", "phone" : "555-555-5555" } }' \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YourAPIKey"
 ```
 
 ```php
@@ -290,6 +298,21 @@ $response = $client->post("/users", [
     "email" => "gg@example.com",
     "phone" => "111-222-3333",
     "company_id" => 1
+  ]
+]);
+
+// OR
+
+$response = $client->post("/users", [
+  'json' => [
+    "first_name" => "Gerald",
+    "last_name" => "Gustaf",
+    "email" => "gg@example.com",
+    "phone" => "111-222-3333",
+    "company" => [
+      "name" => "New Company Name",
+      "phone" => "555-555-5555"
+    ]
   ]
 ]);
 ```
