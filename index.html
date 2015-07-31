@@ -1172,7 +1172,7 @@ curl <span class="s2">"https://api.qiplans.com/v1/users"</span> <span class="se"
 <td>company</td>
 <td>object</td>
 <td><strong>Yes</strong></td>
-<td>Valid nested JSON object for a new company. See <a href="#create-a-company">Create a Company</a> for details. You must provide this company object <em>or</em> an existing <code class="prettyprint">company_id</code>.</td>
+<td>Valid nested JSON object for a new company. See <a href="#create-a-company">Create a Company</a> for details. You must provide this company object <em>or</em> an existing <code class="prettyprint">company_id</code>. <br><br> <strong>Note:</strong> When submitted a company object inside a new user like this, the API will first check to see if a matching company already exists. This duplicate check compares the company name, address, and phone. If a match is found, the new user is linked up to the <em>existing</em> company record.</td>
 </tr>
 </tbody></table>
 
