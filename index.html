@@ -86,6 +86,12 @@ curl <span class="s2">"https://api.qiplans.com/v1"</span> <span class="se">\</sp
 You must replace <code>YourAPIKey</code> with your personal API key.
 </aside>
 
+<h1 id="rate-limiting">Rate Limiting</h1>
+
+<p>By default all API keys are limited to 60 requests within a 5 minute period. If you hit your limit further requests will receive a <code class="prettyprint">403 Forbidden</code> status.</p>
+
+<p>Higher limits are available, fees may apply. Contact support with your requirements for details and pricing.</p>
+
           <h1 id="companies">Companies</h1>
 
 <h2 id="get-all-companies">Get All Companies</h2>
@@ -1272,7 +1278,7 @@ curl <span class="s2">"https://api.qiplans.com/v1/users"</span> <span class="se"
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden &ndash; Your API key is invalid, or you&rsquo;ve attempted to access a restricted resource</td>
+<td>Forbidden &ndash; Your API key is invalid, or you are being throttle. If you&rsquo;ve hit your rate limit and are being throttled the <code class="prettyprint">message</code> will indicate this.</td>
 </tr>
 <tr>
 <td>404</td>
@@ -1283,12 +1289,8 @@ curl <span class="s2">"https://api.qiplans.com/v1/users"</span> <span class="se"
 <td>Method Not Allowed &ndash; You tried to access a resource with an invalid method</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests &ndash; Your requests are being throttled, slow down</td>
-</tr>
-<tr>
 <td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later, or contact support if this persists.</td>
 </tr>
 <tr>
 <td>503</td>
