@@ -63,3 +63,9 @@ The API key must be provided in the `x-api-key` header like this
 <aside class="notice">
 You must replace <code>YourAPIKey</code> with your personal API key.
 </aside>
+
+# Rate Limiting
+
+By default all API keys are limited to 60 requests within a 5 minute period. If you hit your limit further requests will receive a `403 Forbidden` status.
+
+Higher limits are available, fees may apply. Contact support with your requirements for details and pricing.
