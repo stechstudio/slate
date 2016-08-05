@@ -27,11 +27,11 @@ $response = $client->get("/companies");
         "city": "Arden",
         "state": "NC",
         "zip": "28704",
+        "address_formatted": "3601 Sweeten Creek Road\nSte 4\nArden, NC 28704",
         "phone": "630-938-7601",
         "fax": "630-447-0045",
         "blasts_access": true,
-        "tax_exempt": false,
-        "address_formatted": "3601 Sweeten Creek Road\nSte 4\nArden, NC 28704"
+        "tax_exempt": false
       },
       "links": {
         "self": "https://api.qiplans.com/v1/companies/1"
