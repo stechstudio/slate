@@ -40,8 +40,7 @@ $response = $client->get("/projects");
         "bid": "Thu, 25 Aug 16 05:00:00 +0000",
         "bid_ddt": "Thu, Aug 25, 2016 5:00 AM",
         "bid_approx": "2 weeks from now",
-        "bid_status": "Accepting Bids",
-        "notes": "Detailed project notes in textile format"
+        "bid_status": "Accepting Bids"
       },
       "links": {
         "self": "https://api.qiplans.com/v1/projects/1"
@@ -140,11 +139,15 @@ Field         | Type    | Details
 id            | number
 name          | string
 description   | string
+location   | string
+access   | number | Specify '1' for public or '2' for private
 contact_name  | string
 company       | string
 bid           | date
 prebid        | date
+notes   | string
 created       | date
+updated       | date
 
 ### Comparison Operators
 
