@@ -203,8 +203,7 @@ You must replace <code>YourAPIKey</code> with your personal API key.
         </span><span class="nt">"bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 25 Aug 16 05:00:00 +0000"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"bid_ddt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, Aug 25, 2016 5:00 AM"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"bid_approx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 weeks from now"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"bid_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accepting Bids"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Detailed project notes in textile format"</span><span class="w">
+        </span><span class="nt">"bid_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accepting Bids"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/projects/1"</span><span class="w">
@@ -341,6 +340,16 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <td></td>
 </tr>
 <tr>
+<td>location</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>access</td>
+<td>number</td>
+<td>Specify &#39;1&rsquo; for public or &#39;2&rsquo; for private</td>
+</tr>
+<tr>
 <td>contact_name</td>
 <td>string</td>
 <td></td>
@@ -361,7 +370,17 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 <td></td>
 </tr>
 <tr>
+<td>notes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
 <td>created</td>
+<td>date</td>
+<td></td>
+</tr>
+<tr>
+<td>updated</td>
 <td>date</td>
 <td></td>
 </tr>
