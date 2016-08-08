@@ -9,6 +9,7 @@ toc_footers:
   - <a href='mailto:support@reproconnect.com'>Contact Support</a>
 
 includes:
+  - projects
   - companies
   - users
   - errors
