@@ -6,19 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>ReproConnect API Reference</title>
 
-    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-      <script src="javascripts/all.js" type="text/javascript"></script>
-
-      <script>
-        $(function() {
-          setupLanguages(["shell","php"]);
-        });
-      </script>
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;php&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -92,6 +165,348 @@ You must replace <code>YourAPIKey</code> with your personal API key.
 
 <p>Higher limits are available, fees may apply. Contact support with your requirements for details and pricing.</p>
 
+          <h1 id="projects">Projects</h1>
+
+<h2 id="get-all-projects">Get All Projects</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.qiplans.com/v1/projects"</span> <span class="se">\</span>
+  -H <span class="s2">"x-api-key: YourAPIKey"</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">"/projects"</span><span class="p">);</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Millington High School"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"millington-high-school"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sat, 07 Apr 12 20:43:39 +0000"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"created_approx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4 years ago"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"access"</span><span class="p">:</span><span class="w"> </span><span class="s2">"private"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mykey"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brief project description"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chicago, IL"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ReproConnect"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"contact_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joseph"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"contact_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"prebid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 17 Aug 16 05:00:00 +0000"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"prebid_ddt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, Aug 17, 2016 5:00 AM"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"prebid_approx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 week from now"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 25 Aug 16 05:00:00 +0000"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"bid_ddt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, Aug 25, 2016 5:00 AM"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"bid_approx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 weeks from now"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"bid_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accepting Bids"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Detailed project notes in textile format"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/projects/1"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">&lt;snip&gt;</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/projects"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/projects?page=2"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all projects paginated.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /projects</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>id</td>
+<td>Specify the sorting. Can list one or more fields (comma separated). Each field can be prefixed with a minus &ldquo;-&rdquo; sign to indicate reverse order. So <code class="prettyprint">sort=name,-id</code> would order companies by name, newest first.</td>
+</tr>
+<tr>
+<td>quickSearch</td>
+<td>string</td>
+<td></td>
+<td>Perform a quick search on project name, description, or company name. The search is case insensitive and will return projects where any of these fields <em>contain</em> the value specified.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>number</td>
+<td>1</td>
+<td>Specify the page of results to fetch.</td>
+</tr>
+</tbody></table>
+
+<h2 id="advanced-project-search">Advanced Project Search</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.qiplans.com/v1/projects/searches"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'[ ["name","like","Millington%"], ["created","&gt;","2015-01-01"] ]'</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -H <span class="s2">"x-api-key: YourAPIKey"</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s2">"/projects/searches"</span><span class="p">,</span> <span class="p">[</span>
+  <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span><span class="s2">"like"</span><span class="p">,</span><span class="s2">"Millington%"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"created"</span><span class="p">,</span><span class="s2">"&gt;"</span><span class="p">,</span><span class="s2">"2015-01-01"</span><span class="p">]</span>
+  <span class="p">]</span>
+<span class="p">]);</span>
+</code></pre>
+
+<blockquote>
+<p>This will return a list of projects that match the criteria. The structure will be exactly the same as what you would get from &lsquo;Get All Projects&rsquo; above.</p>
+</blockquote>
+
+<p>This endpoint provides powerful, precise searching of projects.</p>
+
+<p>When you submit a search request, you will be redirected to the search result. Make sure your HTTP client follows redirects. The search results will be coming from the &#39;Get All Projects&rsquo; endpoint, with a <code class="prettyprint">search</code> query param added. You will then be able to paginate through your search results just like you would for a normal call to &#39;Get All Projects&rsquo; above.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /projects/searches</code></p>
+
+<h3 id="json-body">JSON Body</h3>
+
+<p>The request body must be a JSON array, with each search criterion specified as a sub-array with exactly three elements. The first element is the field name, the second is the comparison operator, and the third is the value.</p>
+
+<p>For example, to find projects that belong to a particular company name, you would submit this request:</p>
+
+<p><code class="prettyprint">[ [&quot;company&quot;,&quot;=&quot;,&quot;ReproConnect&quot;] ]</code></p>
+
+<p>To specify multiple criteria, simply create multiple sub-arrays:</p>
+
+<p><code class="prettyprint">[ [&quot;company&quot;,&quot;=&quot;,&quot;%Connect%&quot;], [&quot;bid&quot;,&quot;&gt;&quot;,&quot;2016-01-01&quot;] ]</code></p>
+
+<p>Note the percent symbols around &#39;ABC&rsquo; above. This will find companies where the company name <em>contains</em> &#39;Connect&rsquo; anywhere. If you wanted instead to find companies that <em>start</em> with &#39;Connect&rsquo; simply omit the first percent symbol:</p>
+
+<p><code class="prettyprint">[ [&quot;company&quot;,&quot;=&quot;,&quot;Connect%&quot;] ]</code></p>
+
+<p>Furthermore you could request projects that were created within a certain date range. You could use the <code class="prettyprint">&gt;</code> or <code class="prettyprint">&lt;</code> operators here:</p>
+
+<p><code class="prettyprint">[ [&quot;created&quot;,&quot;&gt;&quot;,&quot;2015-01-01&quot;], [&quot;created&quot;,&quot;&lt;&quot;,&quot;2015-08-01&quot;] ]</code></p>
+
+<h3 id="searchable-fields">Searchable Fields</h3>
+
+<p>These are the fields where searching is permitted. Note the field type, make sure to only use comparison operators that support the field type.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>contact_name</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>company</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>bid</td>
+<td>date</td>
+<td></td>
+</tr>
+<tr>
+<td>prebid</td>
+<td>date</td>
+<td></td>
+</tr>
+<tr>
+<td>created</td>
+<td>date</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h3 id="comparison-operators">Comparison Operators</h3>
+
+<table><thead>
+<tr>
+<th>Operator</th>
+<th>Types</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>=</td>
+<td>all</td>
+<td>Requires a complete, case sensitive match</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>numbers, dates</td>
+<td>Less than</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>numbers, dates</td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>numbers, dates</td>
+<td>Less than or equal to</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>numbers, dates</td>
+<td>Greater than or equal to</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>all</td>
+<td>Not equal to</td>
+</tr>
+<tr>
+<td>like</td>
+<td>strings</td>
+<td>Partial match, use in conjunction with the percent symbol</td>
+</tr>
+<tr>
+<td>not like</td>
+<td>strings</td>
+<td>Partial match, use in conjunction with the percent symbol</td>
+</tr>
+<tr>
+<td>ilike</td>
+<td>strings</td>
+<td>Partial match, case insensitive. Use in conjunction with the percent symbol</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-a-specific-project">Get a Specific Project</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.qiplans.com/v1/projects/1"</span> <span class="se">\</span>
+  -H <span class="s2">"x-api-key: YourAPIKey"</span>
+</code></pre>
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">"/projects/1"</span><span class="p">);</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Millington High School"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"millington-high-school"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sat, 07 Apr 12 20:43:39 +0000"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_approx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4 years ago"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"access"</span><span class="p">:</span><span class="w"> </span><span class="s2">"private"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mykey"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brief project description"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chicago, IL"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ReproConnect"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"contact_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joseph"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"contact_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"prebid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 17 Aug 16 05:00:00 +0000"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"prebid_ddt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, Aug 17, 2016 5:00 AM"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"prebid_approx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 week from now"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 25 Aug 16 05:00:00 +0000"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"bid_ddt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, Aug 25, 2016 5:00 AM"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"bid_approx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 weeks from now"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"bid_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accepting Bids"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Detailed project notes in textile format"</span><span class="p">,</span><span class="w">
+      </span><span class="err">&lt;snip</span><span class="w"> </span><span class="err">additional</span><span class="w"> </span><span class="err">project</span><span class="w"> </span><span class="err">attributes&gt;</span><span class="w">
+    </span><span class="err">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/projects/1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves a specific project.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /projects/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>number</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>include</td>
+<td>string</td>
+<td>Set to <code class="prettyprint">company</code> to fetch all the details for the owning company</td>
+</tr>
+</tbody></table>
+
           <h1 id="companies">Companies</h1>
 
 <h2 id="get-all-companies">Get All Companies</h2>
@@ -117,11 +532,11 @@ You must replace <code>YourAPIKey</code> with your personal API key.
         </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arden"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28704"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"address_formatted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3601 Sweeten Creek Road\nSte 4\nArden, NC 28704"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630-938-7601"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630-447-0045"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"blasts_access"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"tax_exempt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"address_formatted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3601 Sweeten Creek Road\nSte 4\nArden, NC 28704"</span><span class="w">
+        </span><span class="nt">"tax_exempt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.qiplans.com/v1/companies/1"</span><span class="w">
@@ -981,11 +1396,11 @@ You must replace <code>YourAPIKey</code> with your personal API key.
           </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arden"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28704"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"address_formatted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3601 Sweeten Creek Road\nSte 4\nArden, NC 28704"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630-938-7601"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630-447-0045"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"blasts_access"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
           </span><span class="nt">"tax_exempt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"address_formatted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3601 Sweeten Creek Road\nSte 4\nArden, NC 28704"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Notes about this company"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1277,8 +1692,12 @@ curl <span class="s2">"https://api.qiplans.com/v1/users"</span> <span class="se"
 <td>Bad Request &ndash; Usually means your request is malformed, review the format of your request, especially the JSON payload for POST and PATCH requests</td>
 </tr>
 <tr>
+<td>401</td>
+<td>Unauthorized &ndash; Your API key is missing or invalid</td>
+</tr>
+<tr>
 <td>403</td>
-<td>Forbidden &ndash; Your API key is invalid, or you are being throttle. If you&rsquo;ve hit your rate limit and are being throttled the <code class="prettyprint">message</code> will indicate this.</td>
+<td>Forbidden &ndash; You have hit your rate limit, or you are now allowed to access this endpoint or resource</td>
 </tr>
 <tr>
 <td>404</td>
